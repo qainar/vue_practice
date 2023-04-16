@@ -1,0 +1,71 @@
+<template>
+  <div class="flex justify-center q-mt-xl">
+    <div class="book flex row">
+
+      <div class="lef col-4">
+        <img src="../../src/assets/images/media.png" style="width: 100%">
+      </div>
+
+      <div class="right col-8">
+        <h3 class="text-weight-bold text-center">Консультация</h3>
+
+        <div class="q-mt-xl q-ml-xl q-mr-xl">
+          <div class="q-pb-md">
+            <label class=" text-weight-medium text-body1">Имя</label>
+            <q-input outlined v-model="text" label="Full Name*" class="q-mt-sm"/>
+          </div>
+          <div class="q-mb-md">
+            <label class="text-body1  text-weight-medium">Почта</label>
+            <q-input outlined v-model="email" label="Email*" class="q-mt-sm"/>
+          </div>
+          <div class="q-mb-md">
+            <label class="text-body1 text-weight-medium">Тема</label>
+            <q-select outlined v-model="type" :options="options" label="Please select" class="q-mt-sm" />
+          </div>
+          <div class="q-mb-md">
+            <label class="text-body1  text-weight-medium">Время</label>
+            <q-select outlined v-model="timeModel" :options="time" label="Time" class="q-mt-sm"/>
+          </div>
+          <div class="q-mt-xl">
+            <q-btn label="Запись на консультацию" type="submit" color="primary" class="full-width q-pa-sm " size="md"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+
+  name: "Book",
+  data() {
+    return {
+      type: '',
+      text: '',
+      email: '',
+      timeModel: '',
+      options: ["Квартира", "Дом", "Офис", "Участок", "Торговые здания"],
+      time:[
+          '10AM',
+          '11AM',
+          '12AM',
+          '1PM',
+          '2PM',
+          '3PM',
+          '4PM',
+          '5PM',
+      ]
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.book {
+  background: white;
+  border-radius: 10px;
+  width: 950px;
+}
+</style>
